@@ -218,7 +218,6 @@
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script src="/upload/upload.js"></script>
     <script src="/script/Products.js"></script>
-    <script src="/script/modal.js"></script>
 
     <script>
 
@@ -237,7 +236,8 @@
             localStorage.removeItem('list_product');
             localStorage.setItem('list_product', JSON.stringify(listProducts));
             showProduct();
-            showToast("Thêm sản phẩm thành công!","fa-regular fa-circle-check")
+            showToast("Thêm sản phẩm thành công!","fa-regular fa-circle-check");
+            editBtn();
         }
         console.log(listProducts);
         function showProduct() {
@@ -353,6 +353,8 @@
 
     </script>
     <script src="/script/fixedBar.js"></script>
+    <script src="/script/modal.js"></script>
+
 
 </body>
 
