@@ -121,15 +121,6 @@ function showListSearch() {
     document.getElementById("draw-table").innerHTML = drawTableAdmin;
 }
 
-function deleteProduct(id) {
-    for (let i = 0; i < listProducts.length; i++) {
-        if(listProducts[i].id == id) {
-            listProducts.splice(i, 1);
-        }
-    }
-    drawTable();
-}
-
 localStorage.removeItem("list_product");
 localStorage.setItem("list_product", JSON.stringify(listProducts));
     
