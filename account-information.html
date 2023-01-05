@@ -190,9 +190,20 @@
         </div>
     </div>
 </div>
-
 <script>
     let currentUser = JSON.parse(localStorage.getItem("current_user"));
+    if(currentUser == null) {
+        alert("Bạn chưa đăng nhập!");
+        currentUser = {
+            id:"",
+            firstName:"",
+            lastName:"",
+            email:"",
+            gender:"",
+            birth:"",
+        }
+        location.href = "./login.html";
+    } 
     console.log(currentUser)
 
     // Kiểm tra đăng nhập
@@ -345,7 +356,6 @@
     getInfoUser()
 </script>
 <script src="script/fixedBar.js"></script>
-<script src="/script/checkUser.js"></script>
 </body>
 
 </html>

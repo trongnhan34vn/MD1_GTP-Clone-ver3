@@ -1,7 +1,7 @@
 window.onload = function()  {
-    let currentUser = JSON.parse(localStorage.getItem('current_user'));
-    if(currentUser == null) {
+    let checkCurrentUser = JSON.parse(localStorage.getItem('current_user'));
+    if(checkCurrentUser == null) {
         alert("Bạn chưa đăng nhập!");
         location.href = "./login.html";
-    }
+    } 
 }

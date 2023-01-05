@@ -196,9 +196,11 @@
     </div>
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="modal">
-        <button style="cursor: pointer;" class="modal-close-btn" id="close-btn"><i class="fa fa-times" title="閉じる"></i></button>
+        <button style="cursor: pointer;" class="modal-close-btn" id="close-btn"><i class="fa fa-times"
+                title="閉じる"></i></button>
         <div style="text-align: center;" class="modal-form">
-            <div style="padding: 4px; display: inline-block; margin-bottom: 24px; border: 1px solid #f5f6f9;" class="modal-product-img">
+            <div style="padding: 4px; display: inline-block; margin-bottom: 24px; border: 1px solid #f5f6f9;"
+                class="modal-product-img">
                 <img style="width: 100px" id="editImg" src="" alt="">
             </div>
             <div class="register-form__item">
@@ -214,13 +216,26 @@
             </div>
         </div>
     </div>
+    <!-- <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form> ;
+    </div> -->
 
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script src="/upload/upload.js"></script>
     <script src="/script/Products.js"></script>
 
     <script>
-
         function postProduct() {
             let nameProduct = document.getElementById('nameProduct').value;
             let priceProduct = document.getElementById('priceProduct').value;
@@ -236,7 +251,7 @@
             localStorage.removeItem('list_product');
             localStorage.setItem('list_product', JSON.stringify(listProducts));
             showProduct();
-            showToast("Thêm sản phẩm thành công!","fa-regular fa-circle-check");
+            showToast("Thêm sản phẩm thành công!", "fa-regular fa-circle-check");
             editBtn();
         }
         console.log(listProducts);
@@ -280,7 +295,7 @@
 
         function findById(id) {
             for (let i = 0; i < listProducts.length; i++) {
-                if(id ==  listProducts[i].id) {
+                if (id == listProducts[i].id) {
                     return listProducts[i];
                 }
             }
@@ -293,7 +308,7 @@
             let editImg = document.getElementById("editImg").src;
             let product = findById(id);
             for (let i = 0; i < listProducts.length; i++) {
-                if(listProducts[i].id == id) {
+                if (listProducts[i].id == id) {
                     editNameInput = listProducts[i].name;
                     editPriceInput = listProducts[i].price;
                     editImg = listProducts[i].img;
@@ -320,15 +335,15 @@
         }
 
         function showToast(alert, icon) {
-                let toast = document.createElement("div");
-                toast.classList.add("toast");
+            let toast = document.createElement("div");
+            toast.classList.add("toast");
 
-                const autoRemove = setTimeout(function () {
-                    toast.remove();
-                }, 4000);
+            const autoRemove = setTimeout(function () {
+                toast.remove();
+            }, 4000);
 
-                toast.style.animation = "slideIn ease .3s";
-                toast.innerHTML = `<div class="toast-message">
+            toast.style.animation = "slideIn ease .3s";
+            toast.innerHTML = `<div class="toast-message">
                             <div class="toast-icon">
                                 <i class="${icon}"></i>
                             </div>
@@ -342,18 +357,17 @@
                             </div>
                         </div>`;
 
-                const toastList = document.querySelector("#toast");
-                toastList.appendChild(toast);
+            const toastList = document.querySelector("#toast");
+            toastList.appendChild(toast);
 
-                setTimeout(function () {
-                    toast.style.animation = `fadeOut ease 3s forwards`;
-                }, 2000);
-            }
+            setTimeout(function () {
+                toast.style.animation = `fadeOut ease 3s forwards`;
+            }, 2000);
+        }
 
     </script>
     <script src="/script/fixedBar.js"></script>
     <script src="/script/modal.js"></script>
-    <script src="/script/checkUser.js"></script>
 
 </body>
 
