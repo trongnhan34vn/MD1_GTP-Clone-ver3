@@ -115,7 +115,7 @@ function showListSearch() {
                 <td>${formatNumber(listSearch[i].price)}</td>
                 <td>
                 <button onclick="openModal(${listProducts[i].id})" class="btn-modal-s">Edit</button>
-                    <button onclick="deleteProduct(${listSearch[i].id})">delete</button>
+                    <button onclick="deleteProduct(${listSearch[i].id})">Delete</button>
                 </td>
             </tr>`;
     }
