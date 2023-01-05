@@ -313,11 +313,10 @@
             editProduct.price = editPriceInput;
             localStorage.removeItem("list_product");
             localStorage.setItem("list_product", JSON.stringify(listProducts));
+            document.getElementById('overlay').classList.remove('is-visible');
+            document.getElementById('modal').classList.remove('is-visible');
             showProduct();
-            document.getElementById('editCloseBtn').addEventListener('click', function() {
-                document.getElementById('overlay').classList.remove('is-visible');
-                document.getElementById('modal').classList.remove('is-visible');
-            });
+            editBtn();
         }
 
         function showToast(alert, icon) {
