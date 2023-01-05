@@ -90,7 +90,7 @@ let listSearch;
 function actionSearch() {
     let inputSearch = document.getElementById("inputSearch").value;
     if (inputSearch.trim() == "") {
-        drawTable();
+        showProduct();
     } else {
         listSearch = [];
         for (let i = 0; i < listProducts.length; i++) {
@@ -114,6 +114,7 @@ function showListSearch() {
                 </td>
                 <td>${formatNumber(listSearch[i].price)}</td>
                 <td>
+                <button onclick="openModal(${listProducts[i].id})" class="btn-modal-s">Edit</button>
                     <button onclick="deleteProduct(${listSearch[i].id})">delete</button>
                 </td>
             </tr>`;
